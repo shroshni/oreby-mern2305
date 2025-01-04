@@ -1,11 +1,11 @@
 import React from "react";
 
-const Flex = ({ children }) => {
+const Flex = ({ children , className , dref}) => {
   return (
-  <div className="flex justify-between items-center">
+  <div ref={dref} className = {`flex ${className}`} flex>
     {children}
     </div>
-
+    
   ) 
 };
 

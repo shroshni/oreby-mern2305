@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Listitem = ({children}) => {
+const Listitem = ({children, className}) => {
   return (
-    <li>{children}</li>
+    <li className={` font-bold ${className} `}>{children}</li>
   )
 }
 
