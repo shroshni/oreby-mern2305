@@ -29,10 +29,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-white py-5 relative z-50 ">
-      <Container className="">
+    <nav className="bg-white py-2  relative z-50 ">
+      <Container className="lg:w-container w-full">
         <div className="px-5 py-5">
-          <Flex className="flex justify-between items-center">
+          <Flex className="flex ">
             <Images src="images/Logo.png" alt="logo" />
 
             {menu ? ( <IoMdClose
@@ -42,40 +42,44 @@ const Navbar = () => {
             onClick={handleMenu}
             className="lg:hidden absolute top-5 right-1"
           />)}
-          
-          <List className= {`${menu ? 'w-full lg:w-auto gap-5 lg:flex  absolute top-20 left-0 lg:sticky bg-secondary pl-5 lg:bg-transparent duration-500  '
-              : 'w-full lg:w-auto gap-5 lg:flex  absolute top-20 left-[-100%] lg:sticky bg-red-500 pl-5 lg:bg-transparent duration-500' }`}>
-                <Listitem className="mt-5">
-                  <Link className="text-sm lg:text-secondary font-normal lg:hover:text-primary hover:font-bold duration-100">
+
+          <Flex className='flex flex-grow justify-center items-center '>
+          <List className= {`${menu ? 'w-full lg:w-auto gap-10 lg:flex  absolute top-20 left-0 lg:sticky bg-secondary pl-5 lg:bg-transparent duration-500  '
+              : 'w-full lg:w-auto gap-5 lg:flex  absolute top-20 left-[-100%] lg:sticky bg-headerbg pl-5 lg:bg-transparent duration-500' }`}>
+                <Listitem className="mt-5 ">
+                  <Link className="text-md lg:text-secondary font-normal lg:hover:text-primary hover:font-bold duration-100">
                     Home
                   </Link>
                 </Listitem>
 
                 <Listitem className="mt-5">
-                  <Link className="text-sm lg:text-secondary font-normal lg:hover:text-primary hover:font-bold duration-100">
-                    Home
+                  <Link className="text-md lg:text-secondary font-normal lg:hover:text-primary hover:font-bold duration-100">
+                    Shop
                   </Link>
                 </Listitem>
 
                 <Listitem className="mt-5">
-                  <Link className="text-sm lg:text-secondary font-normal lg:hover:text-primary hover:font-bold duration-100">
-                    Home
+                  <Link className="text-md lg:text-secondary font-normal lg:hover:text-primary hover:font-bold duration-100">
+                    About
                   </Link>
                 </Listitem>
 
                 <Listitem className="mt-5">
-                  <Link className="text-sm lg:text-secondary font-normal lg:hover:text-primary hover:font-bold duration-100">
-                    Home
+                  <Link className="text-md lg:text-secondary font-normal lg:hover:text-primary hover:font-bold duration-100">
+                    Contact
                   </Link>
                 </Listitem>
 
                 <Listitem className="mt-5">
-                  <Link className="text-sm lg:text-secondary font-normal lg:hover:text-primary hover:font-bold duration-100">
-                    Home
+                  <Link className="text-md lg:text-secondary font-normal lg:hover:text-primary hover:font-bold duration-100">
+                    Journal
                   </Link>
                 </Listitem>
               </List>
             
+          </Flex>
+          
+         
           </Flex>
         </div>
       </Container>

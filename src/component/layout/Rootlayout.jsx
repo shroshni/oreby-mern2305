@@ -4,6 +4,7 @@ import Navbar from "../Navbar";
 import Footer from "../Footer";
 import Header from "../Header";
 
+
 const Rootlayout = () => {
   return (
     <div>

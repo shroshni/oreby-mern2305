@@ -36,21 +36,21 @@ const Header = () => {
         setAccountModal(false);
       }
 
-      if(cartRef.current.contains(e.target)){
+      if (cartRef.current.contains(e.target)) {
         setCartModal(true);
-        }else{
-          setCartModal(false);
-        }
+      } else {
+        setCartModal(false);
+      }
     });
   }, []);
 
   return (
-    <header className=" bg-headerbg py-6">
-      <Container>
-        <Flex className="justify-between items-center">
+    <header className=" w-full bg-headerbg py-6">
+      <Container className="lg:container w-full">
+        <Flex className="justify-between items-center gap-5 ">
           <Flex dref={categoreRef} className="items-center relative">
-            <HiOutlineBars2 />
-            <p className="text-sm font-normal text-primary select-none ml-2">
+            <HiOutlineBars2 className="lg:text-2xl text-primary " />
+            <p className=" hidden lg:block text-md font-normal text-primary select-none ml-2">
               Shop by Category
             </p>
 
@@ -97,66 +97,66 @@ const Header = () => {
 
           <div className="relative w-[601px]">
             <Input
-              className="w-full h-[50px] hidden lg:block rounded-none bg-white placeholder:pl-5"
+              className="w-full h-[50px] lg:block rounded-none bg-white lg:placeholder:pl-5 placeholder:pl-2 lg:placeholder:text-base placeholder:text-sm "
               placeholder="Search Products"
             />
-            <IoSearch className=" absolute hidden lg:blocktop-4 right-4 text-2xl" />
+            <IoSearch className=" absolute  lg:block top-4 lg:right-4 right-3 lg:text-2xl" />
           </div>
 
-          <Flex className="gap-10 items-center">
+          <Flex className=" items-center gap-3 lg:gap-10">
             <div className="flex">
-              
-              <Flex dref={accountRef} className=" relative ">
-              <FaUserAlt />
-                <IoMdArrowDropdown />
-                <div>
-                  {accountModal && (
-                    <div className="absolute top-7 right-0 w-[200px] text-center border border-solid border-[#9747ff] duration-300 bg-white">
-                      <Link className="block hover:text-white hover:bg-black hover:font-bold text-sm font-normal px-3 py-3 ">
-                        My Account
-                      </Link>
-                      <Link className="block hover:text-white hover:bg-black hover:font-bold text-sm  font-normal px-3 py-3 ">
-                        Log Out
-                      </Link>
-                    </div>
-                  )}
-                </div>
+              <Flex dref={accountRef} className="  relative ">
+                <Flex>
+                  <div>
+                    <FaUserAlt className="lg:text-2xl" />
+                    {accountModal && (
+                      <div className="absolute top-7 right-0 w-[200px] text-center border border-solid border-[#9747ff] duration-300 bg-white">
+                        <Link className="block hover:text-white hover:bg-black hover:font-bold text-sm font-normal px-3 py-3 ">
+                          My Account
+                        </Link>
+                        <Link className="block hover:text-white hover:bg-black hover:font-bold text-sm  font-normal px-3 py-3 ">
+                          Log Out
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                  <IoMdArrowDropdown className="lg:text-2xl" />
+                </Flex>
               </Flex>
             </div>
 
             <Flex dref={cartRef} className="relative ">
-              <FaShoppingCart />
+              <FaShoppingCart className="lg:text-2xl" />
               {cartModal && (
-                 <div className=" absolute top-8 right-0 border border-solid border-[#9747ff]">
-                 <div className=" flex  justify-between  p-5 w-[360px]  bg-headerbg ">
-                   <div className="w-[80px] h-[80px] border border-1">
-                     <Images src="images/smart watch.webp" alt="smart watch" />
-                   </div>
-                   <div className="">
-                     <p className="font-bold py-2"> Black Smart Watch</p>
-                     <p className="font-bold">$44.00</p>
-                   </div>
-                   <div className="flex items-center justify-center">
-                     <ImCross />
-                   </div>
-                 </div>
-                 <div className=" flex flex-col gap-5 border border-1 p-5 ">
-                   <div className="text-xl">
-                     Subtotal: <span className="font-bold">$44.00</span>
-                   </div>
- 
-                   <div className="flex justify-between">
-                     <div className="flex items-center justify-center w-[148px] h-[50px] border border-1 text-black font-bold hover:text-white hover:bg-black ">
-                       View Cart
-                     </div>
-                     <div className="flex items-center justify-center w-[148px] h-[50px] border border-1 text-black font-bold hover:text-white hover:bg-black">
-                       Checkout
-                     </div>
-                   </div>
-                 </div>
-               </div>
+                <div className=" absolute top-8 right-0 border border-solid border-[#9747ff]">
+                  <div className=" flex  justify-between  p-5 w-[360px]  bg-headerbg ">
+                    <div className="w-[80px] h-[80px] border border-1">
+                      <Images src="images/smart watch.webp" alt="smart watch" />
+                    </div>
+                    <div className="">
+                      <p className="font-bold py-2"> Black Smart Watch</p>
+                      <p className="font-bold">$44.00</p>
+                    </div>
+                    <div className="flex items-center justify-center">
+                      <ImCross />
+                    </div>
+                  </div>
+                  <div className=" flex flex-col gap-5 border border-1 p-5 ">
+                    <div className="text-xl">
+                      Subtotal: <span className="font-bold">$44.00</span>
+                    </div>
+
+                    <div className="flex justify-between">
+                      <div className="flex items-center justify-center w-[148px] h-[50px] border border-1 text-black font-bold hover:text-white hover:bg-black ">
+                        View Cart
+                      </div>
+                      <div className="flex items-center justify-center w-[148px] h-[50px] border border-1 text-black font-bold hover:text-white hover:bg-black">
+                        Checkout
+                      </div>
+                    </div>
+                  </div>
+                </div>
               )}
-             
             </Flex>
           </Flex>
         </Flex>
