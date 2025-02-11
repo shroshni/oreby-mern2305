@@ -25,7 +25,7 @@ const Header = () => {
   useEffect(() => {
     document.addEventListener("click", function (e) {
       if (categoreRef.current.contains(e.target)) {
-        setCategoreModal(true);
+        setCategoreModal(!categoreModal);
       } else {
         setCategoreModal(false);
       }
@@ -45,7 +45,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className=" w-full bg-headerbg py-6">
+    <header className="  bg-headerbg py-6 ">
       <Container className="lg:container w-full">
         <Flex className="justify-between items-center gap-5 ">
           <Flex dref={categoreRef} className="items-center relative">
@@ -56,7 +56,7 @@ const Header = () => {
 
             <div>
               {categoreModal && (
-                <List className="absolute top-16 left-0 w-[263px] bg-primary ">
+                <List className="absolute z-50 top-16 left-0 w-[263px] bg-primary ">
                   <Listitem className=" border border-[#9747ff]">
                     <Link className="text-sm font-normal text-white px-5 py-5 inline-block hover:font-bold hover:ml-3 duration-200 ">
                       Accesories{" "}
@@ -110,7 +110,7 @@ const Header = () => {
                   <div>
                     <FaUserAlt className="lg:text-2xl" />
                     {accountModal && (
-                      <div className="absolute top-7 right-0 w-[200px] text-center border border-solid border-[#9747ff] duration-300 bg-white">
+                      <div className="absolute z-50 top-7 right-0 w-[200px] text-center border border-solid border-[#9747ff] duration-300 bg-white">
                         <Link className="block hover:text-white hover:bg-black hover:font-bold text-sm font-normal px-3 py-3 ">
                           My Account
                         </Link>
@@ -128,7 +128,7 @@ const Header = () => {
             <Flex dref={cartRef} className="relative ">
               <FaShoppingCart className="lg:text-2xl" />
               {cartModal && (
-                <div className=" absolute top-8 right-0 border border-solid border-[#9747ff]">
+                <div className=" absolute z-50 top-8 right-0 border border-solid border-[#9747ff]">
                   <div className=" flex  justify-between  p-5 w-[360px]  bg-headerbg ">
                     <div className="w-[80px] h-[80px] border border-1">
                       <Images src="images/smart watch.webp" alt="smart watch" />
@@ -141,7 +141,7 @@ const Header = () => {
                       <ImCross />
                     </div>
                   </div>
-                  <div className=" flex flex-col gap-5 border border-1 p-5 ">
+                  <div className=" flex flex-col gap-5 border border-1 p-5 bg-white ">
                     <div className="text-xl">
                       Subtotal: <span className="font-bold">$44.00</span>
                     </div>
